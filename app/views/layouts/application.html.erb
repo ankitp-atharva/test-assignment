@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TestAssignment</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+<div>
+  <% if user_signed_in? %>
+      <%= link_to 'Home', root_path %> |
+      <%= link_to 'Questions', questions_path %> |
+      <%= link_to 'Answers', answers_path %> |
+      <%= link_to 'Topics', topics_path %> |
+      <b>Welcome</b> <%= current_user.email %> | <%= link_to 'Logout', destroy_user_session_path %>
+  <% else %>
+      <%= link_to 'Login', new_user_session_path %>
+  <% end %>
+</div>
+<hr />
+<%= content_tag(:p, notice, id: 'notice') if notice %>
+<%= content_tag(:p, alert, id: 'alert') if alert %>
+
+<%= yield %>
+</body>
+</html>
