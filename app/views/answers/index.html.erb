@@ -16,7 +16,7 @@
         <td><%= answer.desc %></td>
         <td><%= link_to 'Questions', questions_path, class: 'answer user questions' %></td>
         <td><%= link_to 'Answers', answers_path, class: 'user answers' %></td>
-        <td><%= link_to 'Topics', topics_path, class: 'user topics' %></td>
+        <td><%= link_to 'Topics', followings_topics_path, class: 'user topics' %></td>
         <td><%= link_to 'Followings', followings_path, class: 'user following' %></td>
         <td><%= link_to 'Show', answer %></td>
         <td><%= link_to 'Edit', edit_answer_path(answer) %></td>

@@ -1,0 +1,19 @@
+<h1>Followings</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>User</th>
+    <th>Email</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @followers.each do |follower| %>
+      <tr>
+        <td><%= follower.topic_id %></td>
+        <td><%= follower.topic.desc %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

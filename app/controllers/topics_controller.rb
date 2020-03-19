@@ -62,7 +62,7 @@ class TopicsController < ApplicationController
   end
 
   def followings
-    @followers = current_user.follow_users.includes(:user)
+    @followers = current_user.follow_topics.includes(:topic)
   end
 
   private
